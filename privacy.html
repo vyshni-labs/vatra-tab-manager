@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vatra — privacy policy</title>
+    <meta
+      name="description"
+      content="vatra runs entirely on your device. Your tabs, history and settings never leave your browser."
+    />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="masthead">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M 14.071 4.273 A 8.0 8.0 0 1 0 19.727 9.929"
+            fill="none"
+            stroke="#6A625A"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <circle class="ember-breathe" cx="12" cy="12" r="4" fill="#FF8A26" />
+        </svg>
+        <a class="wordmark" href="./">vatra</a>
+        <span class="tagline">Keep your work warm.</span>
+      </header>
+
+      <main>
+        <h1>Privacy policy</h1>
+        <p class="updated">Last updated: August 3, 2026</p>
+
+        <p class="lede">
+          vatra is a tab navigator that runs entirely on your device.
+          <strong
+            >Your tabs, your history, and your settings never leave your
+            browser.</strong
+          >
+          The only thing vatra ever sends anywhere is feedback you type and
+          submit yourself — see
+          <a href="#feedback">Feedback you choose to send</a> below.
+        </p>
+
+        <h2>What vatra accesses, and why</h2>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Why</th>
+                <th>Where it goes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Open tabs (titles, URLs, favicons)</td>
+                <td>
+                  To show and search your tab list, sort by recency, and group
+                  by domain
+                </td>
+                <td>
+                  Kept in memory and in Chrome's local extension storage on your
+                  device
+                </td>
+              </tr>
+              <tr>
+                <td>Tab activity (when you switch to a tab, how often)</td>
+                <td>
+                  To compute the "attention" score that orders the Hot view and
+                  to sleep unused tabs
+                </td>
+                <td>Chrome's local extension storage on your device</td>
+              </tr>
+              <tr>
+                <td>Browsing history (searched on demand)</td>
+                <td>
+                  To show matching pages under the search box while you type
+                </td>
+                <td>Read locally, displayed, never stored or transmitted</td>
+              </tr>
+              <tr>
+                <td>Settings (colors, panel position, preferences)</td>
+                <td>To remember your configuration</td>
+                <td>Chrome's local extension storage on your device</td>
+              </tr>
+              <tr>
+                <td>Feedback you type and submit (message, optional email)</td>
+                <td>To tell the developer what is broken or missing</td>
+                <td>
+                  Sent to Formspree, which emails it to the developer; a copy
+                  stays in local storage. Never sent unless you press Submit
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="feedback">Feedback you choose to send</h2>
+
+        <p>
+          vatra has a feedback box in its settings panel. It does nothing until
+          you type a message and press Submit. When you do, and
+          <strong>only</strong> then, vatra sends the message text and — if you
+          filled it in — your email address to
+          <a href="https://formspree.io/legal/privacy-policy">Formspree</a>, a
+          form-relay service that forwards it to the developer by email. Your
+          email address is optional; leave it blank and the message is sent
+          anonymously. A copy is also kept in Chrome's local extension storage
+          on your device.
+        </p>
+
+        <p>
+          No tab titles, URLs, history, or settings are attached to a feedback
+          submission. Only what you typed.
+        </p>
+
+        <p>
+          When you uninstall vatra, Chrome opens a short
+          <a href="uninstall.html">exit-survey page</a> hosted on GitHub Pages.
+          Answering is entirely optional, and closing the tab sends nothing. If
+          you do answer, the same Formspree relay applies.
+        </p>
+
+        <h2>What vatra does NOT do</h2>
+
+        <ul>
+          <li>
+            Your tabs, browsing history, and settings are never transmitted
+            anywhere. Apart from feedback you explicitly submit, vatra makes no
+            network requests of its own. (Site icons are served by Chrome's
+            built-in favicon cache.)
+          </li>
+          <li>
+            No analytics, telemetry, error reporting, or tracking of any kind.
+          </li>
+          <li>No advertising, no profiling, no third-party trackers.</li>
+          <li>No sale or sharing of any data with anyone.</li>
+          <li>
+            No remote code — all code ships in the extension package and is
+            reviewed by the Chrome Web Store.
+          </li>
+        </ul>
+
+        <h2>Data retention &amp; removal</h2>
+
+        <p>
+          Everything vatra stores lives in Chrome's local extension storage.
+          Records for closed tabs are pruned automatically. Uninstalling the
+          extension deletes all of its data permanently.
+        </p>
+
+        <p>
+          Feedback you submitted is retained by the developer for as long as it
+          is useful for fixing the thing you reported. To have a submission and
+          any email address attached to it deleted, write to the contact address
+          below.
+        </p>
+
+        <h2>Limited Use</h2>
+
+        <p>
+          vatra's use of data obtained through Chrome APIs complies with the
+          <a
+            href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq"
+            >Chrome Web Store User Data Policy</a
+          >, including the Limited Use requirements: data is used only to
+          provide the single, user-facing purpose described above.
+        </p>
+
+        <h2>Contact</h2>
+
+        <p>
+          Questions:
+          <a href="mailto:vyshni.labs@gmail.com">vyshni.labs@gmail.com</a>
+        </p>
+      </main>
+
+      <footer>
+        <a href="./">vatra</a> · Privacy ·
+        <a href="https://github.com/vyshni-labs/vatra-tab-manager">Source</a>
+      </footer>
+    </div>
+  </body>
+</html>

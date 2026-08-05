@@ -1,0 +1,295 @@
+/* vatra — marketing/legal surfaces.
+   Palette is the frozen brand spec: neutral ring, warm ember. */
+:root {
+  --bg: #0d0d0f;
+  --surface: #16161a;
+  --border: #26262c;
+  --text: #e8e4de;
+  --muted: #9d968d;
+  --ring: #6a625a;
+  --ember: #ff8a26;
+  --ember-soft: #ffb15f;
+  --warm: #ffb347;
+  --maxw: 46rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    400 17px/1.65 ui-sans-serif,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  /* one warm bloom from the top-left, echoing the panel's own header wash */
+  background-image: radial-gradient(
+    circle at 8% -6%,
+    rgb(255 138 38 / 0.14),
+    transparent 42%
+  );
+  background-repeat: no-repeat;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+/* ── masthead ─────────────────────────────────────────────────────────── */
+header.masthead {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 2.5rem 0 1.75rem;
+}
+
+header.masthead svg {
+  flex: none;
+}
+
+.wordmark {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.wordmark .dot {
+  color: var(--ember);
+}
+
+.tagline {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ── type ─────────────────────────────────────────────────────────────── */
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--ember-soft);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: var(--warm);
+}
+
+.lede {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.updated {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0 0 2rem;
+}
+
+strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.15rem;
+  margin: 0 0 1rem;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+li::marker {
+  color: var(--ring);
+}
+
+/* ── table ────────────────────────────────────────────────────────────── */
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 0 1.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34rem;
+  font-size: 0.94rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── form (uninstall survey) ──────────────────────────────────────────── */
+form {
+  margin: 1.5rem 0 0;
+}
+
+label {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--muted);
+  margin: 1.25rem 0 0.45rem;
+}
+
+textarea,
+input[type="email"] {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+textarea:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: rgb(255 138 38 / 0.55);
+  box-shadow: 0 0 0 3px rgb(255 138 38 / 0.13);
+}
+
+::placeholder {
+  color: #6b655d;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  background: var(--ember);
+  color: #1a1206;
+  border: 0;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--warm);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--ember-soft);
+  outline-offset: 3px;
+}
+
+button[disabled] {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.9rem;
+}
+
+.status {
+  margin-top: 1.25rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 9px;
+  font-size: 0.94rem;
+}
+
+.status.ok {
+  background: rgb(255 138 38 / 0.11);
+  border: 1px solid rgb(255 138 38 / 0.35);
+}
+.status.error {
+  background: rgb(200 70 55 / 0.12);
+  border: 1px solid rgb(200 70 55 / 0.42);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ── footer ───────────────────────────────────────────────────────────── */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--muted);
+}
+footer a:hover {
+  color: var(--ember-soft);
+}
+
+/* The ember is the only motion on these pages — one token, ~8s, and it
+   stops entirely for anyone who asked the OS to calm things down. */
+@media (prefers-reduced-motion: no-preference) {
+  .ember-breathe {
+    animation: ember-breathe 8s ease-in-out infinite;
+  }
+}
+
+@keyframes ember-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}

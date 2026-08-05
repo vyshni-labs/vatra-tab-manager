@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vatra — what made you uninstall?</title>
+    <meta
+      name="description"
+      content="One question: what made you uninstall vatra?"
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="masthead">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M 14.071 4.273 A 8.0 8.0 0 1 0 19.727 9.929"
+            fill="none"
+            stroke="#6A625A"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <circle class="ember-breathe" cx="12" cy="12" r="4" fill="#FF8A26" />
+        </svg>
+        <a class="wordmark" href="./">vatra</a>
+      </header>
+
+      <main>
+        <h1>The fire's out. What went wrong?</h1>
+
+        <p class="lede">
+          vatra has been removed. No hard feelings — but if you have ten
+          seconds, telling me why is the single most useful thing you can do for
+          it.
+        </p>
+
+        <form id="exitForm">
+          <label for="reason">What made you uninstall?</label>
+          <textarea
+            id="reason"
+            name="reason"
+            required
+            placeholder="Too slow, got in the way, didn't do the thing I wanted, I just don't need it…"
+          ></textarea>
+
+          <label for="email">Email — optional, only if you want a reply</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+          />
+
+          <!-- lets the developer tell exit surveys apart from in-panel feedback -->
+          <input type="hidden" name="source" value="uninstall-survey" />
+          <input
+            type="hidden"
+            name="_subject"
+            value="vatra — uninstall survey"
+          />
+
+          <button type="submit" id="submitBtn">Send</button>
+
+          <p class="hint">
+            Nothing is sent unless you press Send. Closing this tab sends
+            nothing at all. See the <a href="privacy.html">privacy policy</a>.
+          </p>
+        </form>
+
+        <div id="status" class="status" role="status" hidden></div>
+      </main>
+
+      <footer>
+        <a href="./">vatra</a> · <a href="privacy.html">Privacy</a> ·
+        <a href="https://github.com/vyshni-labs/vatra-tab-manager">Source</a>
+      </footer>
+    </div>
+
+    <script>
+      const ENDPOINT = "https://formspree.io/f/mrenbkyn";
+
+      const form = document.getElementById("exitForm");
+      const btn = document.getElementById("submitBtn");
+      const status = document.getElementById("status");
+
+      function say(msg, kind) {
+        status.textContent = msg;
+        status.className = "status " + kind;
+        status.hidden = false;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+
+          if (!res.ok) throw new Error("HTTP " + res.status);
+
+          form.hidden = true;
+          say("Sent — thank you. That genuinely helps.", "ok");
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = "Send";
+          say(
+            "That didn't go through. You can email vyshni.labs@gmail.com instead.",
+            "error",
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
