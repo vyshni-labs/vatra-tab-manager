@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vatra — support</title>
+<meta name="description" content="Help with vatra: common fixes, and a way to reach the developer.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M 14.071 4.273 A 8.0 8.0 0 1 0 19.727 9.929" fill="none"
+            stroke="#6A625A" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="ember-breathe" cx="12" cy="12" r="4" fill="#FF8A26"/>
+    </svg>
+    <a class="wordmark" href="./">vatra</a>
+    <span class="tagline">Keep your work warm.</span>
+  </header>
+
+  <main>
+    <h1>Support</h1>
+
+    <p class="lede">
+      Most problems have a quick fix below. If none of them match, write to me
+      directly — the form goes straight to my inbox and I read everything.
+    </p>
+
+    <h2>Common fixes</h2>
+
+    <h3>The panel doesn't appear on some pages</h3>
+    <p>
+      By design. vatra can't inject into browser-internal pages — <code>chrome://</code>
+      settings, the Chrome Web Store, the built-in PDF viewer, or a blank new
+      tab. Chrome forbids extensions from touching those. Open any ordinary
+      http/https page and it will be there.
+    </p>
+
+    <h3>Alt+S doesn't open the panel</h3>
+    <p>
+      Usually another application claimed that combination first — window
+      managers on Linux and some desktop apps grab Alt-key shortcuts before the
+      browser ever sees them. Rebind it: open a new tab, paste
+      <code>chrome://extensions/shortcuts</code> into the address bar, and set
+      any combination you like. Browsers can't be sent to that page by a link,
+      so copy and paste it.
+    </p>
+    <p>
+      If you run two browsers side by side, note that a shortcut only reaches
+      the one that currently has focus. That's an operating-system rule, not
+      something an extension can work around.
+    </p>
+
+    <h3>The panel gets in the way of the page</h3>
+    <p>
+      Drag it by its top handle, or pull the corner grip to resize — the
+      position is remembered. If you'd rather it never overlap the page at all,
+      open Settings and switch <strong>Panel type</strong> to Chrome's native
+      side panel, which docks beside the page instead of floating over it.
+    </p>
+
+    <h3>A tab reloaded when I came back to it</h3>
+    <p>
+      That's tab sleep reclaiming memory from tabs you hadn't touched in a
+      while. Active, pinned, and audio-playing tabs are never slept. Turn it off
+      or change the threshold in Settings.
+    </p>
+
+    <h3>Is my browsing data safe?</h3>
+    <p>
+      Your tabs, history, and settings never leave your browser. Nothing is
+      collected, sold, or shared. The full detail is in the
+      <a href="privacy.html">privacy policy</a> — it's short and specific.
+    </p>
+
+    <h2>Still stuck?</h2>
+
+    <form id="supportForm">
+      <label for="message">What's going wrong?</label>
+      <textarea id="message" name="message" required
+                placeholder="What you expected, what happened instead, and which browser you're on if you know."></textarea>
+
+      <label for="email">Email — optional, but I can't reply without it</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+
+      <input type="hidden" name="source" value="support-page">
+      <input type="hidden" name="_subject" value="vatra — support request">
+
+      <button type="submit" id="submitBtn">Send</button>
+
+      <p class="hint">
+        Nothing is sent until you press Send. There's the same form inside the
+        extension, under Settings → Support &amp; Feedback.
+      </p>
+    </form>
+
+    <div id="status" class="status" role="status" hidden></div>
+
+    <h2>Other ways to reach me</h2>
+    <ul>
+      <li>Email — <a href="mailto:vyshni.labs@gmail.com">vyshni.labs@gmail.com</a></li>
+      <li>
+        Bug reports and feature requests, if you have a GitHub account —
+        <a href="https://github.com/vyshni-labs/vatra-tab-manager/issues">open an issue</a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <a href="./">vatra</a> · <a href="privacy.html">Privacy</a> ·
+    <a href="https://github.com/vyshni-labs/vatra-tab-manager">Source</a>
+  </footer>
+
+</div>
+
+<script>
+  const ENDPOINT = "https://formspree.io/f/mrenbkyn";
+
+  const form = document.getElementById("supportForm");
+  const btn = document.getElementById("submitBtn");
+  const status = document.getElementById("status");
+
+  function say(msg, kind) {
+    status.textContent = msg;
+    status.className = "status " + kind;
+    status.hidden = false;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      form.hidden = true;
+      say("Sent — thank you. I'll read it shortly.", "ok");
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "Send";
+      say(
+        "That didn't go through. Please email vyshni.labs@gmail.com instead.",
+        "error"
+      );
+    }
+  });
+</script>
+</body>
+</html>
