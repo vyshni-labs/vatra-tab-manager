@@ -15,6 +15,7 @@
 <p align="center">
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/">Website</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/privacy.html">Privacy</a> ·
+  <a href="https://vyshni-labs.github.io/vatra-tab-manager/changelog.html">Changelog</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/uninstall.html">Feedback</a>
 </p>
 
@@ -101,11 +102,17 @@ source lives separately.
 |------|---------|
 | [`index.html`](https://vyshni-labs.github.io/vatra-tab-manager/) | Landing page |
 | [`privacy.html`](https://vyshni-labs.github.io/vatra-tab-manager/privacy.html) | Privacy policy — the URL given to the Chrome Web Store |
+| [`support.html`](https://vyshni-labs.github.io/vatra-tab-manager/support.html) | Support page — the URL given to the Chrome Web Store |
+| [`changelog.html`](https://vyshni-labs.github.io/vatra-tab-manager/changelog.html) | Release notes |
 | [`uninstall.html`](https://vyshni-labs.github.io/vatra-tab-manager/uninstall.html) | Exit survey opened on uninstall |
 
-Static HTML and CSS, no build step and no third-party scripts. The only network
-call anywhere on the site is the exit survey's own form POST, and only when a
-visitor submits it.
+Static HTML and CSS with no third-party scripts. The only network call anywhere
+on the site is the support and exit-survey form POST, and only when a visitor
+submits one.
+
+`changelog.html` is the one generated file — it is built from `CHANGELOG.md` in
+the extension repo so the two can't drift. Edit the markdown there, not the HTML
+here.
 
 ## Contact
 

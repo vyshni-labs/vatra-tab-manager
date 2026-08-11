@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vatra — changelog</title>
+<meta name="description" content="What changed in each build of vatra, newest first.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M 14.071 4.273 A 8.0 8.0 0 1 0 19.727 9.929" fill="none"
+            stroke="#6A625A" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="ember-breathe" cx="12" cy="12" r="4" fill="#FF8A26"/>
+    </svg>
+    <a class="wordmark" href="./">vatra</a>
+    <span class="tagline">Keep your work warm.</span>
+  </header>
+
+  <main class="changelog">
+    <h1>Changelog</h1>
+    <p>What changed in each build, newest first.</p>
+    <p>vatra hasn&#x27;t reached the Chrome Web Store yet — 0.4.0 is the build in review, and everything before it was a development build. Anything under <strong>Unreleased</strong> is written and tested but not yet in a submitted package.</p>
+    <h2>Unreleased</h2>
+    <h3>Search ranks by match quality, then heat</h3>
+    <p>Search finds the thing; heat decides which found thing comes first. That was already true, but nothing stopped a very hot tab from outranking an exact match — a tab whose <em>URL</em> happened to contain your query could sit above the tab actually titled with it. Matches are now graded first (title start, then a word inside the title, then anywhere in the title, then the site, then the URL), and heat orders the tabs within each grade. An exact title match can no longer be buried.</p>
+    <h3>Several words, in any order, and typos</h3>
+    <p><code>auth jira</code> and <code>jira auth</code> both find <em>Jira — Fix authentication</em>; every word has to match somewhere, so adding a word narrows instead of scattering. Dropped letters still land: <code>athn</code> finds <em>Authentication</em>. Loose matching like that is the last resort, never something that floods the list ahead of real matches.</p>
+    <h3>While you&#x27;re typing, search is the only thing sorting</h3>
+    <p>The view, the Recent sort, the time window and pinned-tabs-first used to each rearrange or filter your results — so the same query gave different answers depending on settings you weren&#x27;t thinking about. Now the match ranking is the order, and those controls dim to show they&#x27;ve stepped aside; they resume the moment the box is empty.</p>
+    <p>This also fixes a real trap: with a narrow time window, an open tab could be missing from its own search, and pressing Enter would run a web search for a page that was open the whole time.</p>
+    <h3>Less work per keystroke</h3>
+    <p>The list was rebuilding its whole model four times for every character typed. Now once — roughly three times less work per keystroke with several hundred tabs open, despite the smarter matching.</p>
+    <h2>0.4.0 — August 2026</h2>
+    <p>Submitted for Chrome Web Store review.</p>
+    <ul><li><strong>Renamed to vatra</strong> (it was HotTabs), with the open-hearth mark and one warm temperature scale — hot gold through cold grey — used for every heat and age signal in the panel.</li><li><strong>Closed view.</strong> Recently closed pages, read from local history, one click to rekindle. Repeat visits to the same search page collapse into one entry instead of flooding the list.</li><li><strong><code>Alt+S</code> opens the panel</strong> with the search box focused, from anywhere. (It was <code>Alt+A</code>.)</li><li><strong>Chrome&#x27;s native side panel as a fallback.</strong> The overlay can&#x27;t be injected into <code>chrome://</code> pages, the Web Store, the PDF viewer or a blank new tab; on those, vatra opens in the browser&#x27;s own sidebar instead. Choosable outright in Settings → Panel type.</li><li><strong>Enter works everywhere</strong>, and tab size collapsed into one Small / Medium / Large setting instead of two that could disagree.</li><li><strong>Site icons come from Chrome&#x27;s local cache.</strong> The last code path that fetched an icon from a website directly is gone, so browsing the panel contacts nothing.</li><li><strong>Fixes:</strong> the panel survives sites that rebuild the page under it (it was being deleted on some apps); scrolling no longer leaves ghosting behind the panel; and a stale flag could permanently disable the keyboard shortcut in a window until a browser restart.</li></ul>
+    <h2>0.3.0 — July 2026</h2>
+    <p>Development build.</p>
+    <ul><li><strong>The collapsed strip became a real dock:</strong> one chip size, a fan of pinned tabs, hover-peek on the rail, and a fast pointer swipe that opens the panel reliably instead of sometimes.</li><li><strong>Cold tabs sleep.</strong> Background tabs left untouched past a threshold you set are discarded to free memory — never the active, pinned or audio-playing ones — and reload when you come back to them.</li><li><strong>Theme override</strong> in Settings (Auto / Light / Dark), plus separate transparency sliders for the panel and the strip.</li><li><strong>A feedback box in Settings</strong> that reaches the developer, and the history search behind the search box actually working.</li></ul>
+    <h2>0.2.0 — June 2026</h2>
+    <p>First working build: a free-floating overlay panel you can drag, resize and dock to either edge; attention scoring with a tunable half-life; the Hot and Domains views; and the age bar down the side of every row.</p>
+  </main>
+
+  <footer>
+    <a href="./">vatra</a> · <a href="privacy.html">Privacy</a> ·
+    <a href="support.html">Support</a> · Changelog ·
+    <a href="https://github.com/vyshni-labs/vatra-tab-manager">Source</a>
+  </footer>
+
+</div>
+<!-- Generated from CHANGELOG.md by branding/build_changelog.py — do not edit. -->
+</body>
+</html>
