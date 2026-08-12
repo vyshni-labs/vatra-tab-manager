@@ -110,6 +110,22 @@ Static HTML and CSS with no third-party scripts. The only network call anywhere
 on the site is the support and exit-survey form POST, and only when a visitor
 submits one.
 
+## Search Console verification
+
+Verifying this domain earns the Established Publisher badge and is listed by
+Google among the things that improve Chrome Web Store discoverability.
+
+Add a **URL prefix** property for
+`https://vyshni-labs.github.io/vatra-tab-manager/` — not a Domain property,
+which verifies over DNS for `github.io`, a zone Google controls and we do not.
+
+Either method works:
+
+- **HTML tag** — paste the token into the commented `google-site-verification`
+  meta in `index.html` and uncomment it.
+- **HTML file** — drop the `google<token>.html` file at the repo root. `.nojekyll`
+  is present, so it is served verbatim.
+
 `changelog.html` is the one generated file — it is built from `CHANGELOG.md` in
 the extension repo so the two can't drift. Edit the markdown there, not the HTML
 here.
