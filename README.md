@@ -13,6 +13,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh"><strong>Install</strong></a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/">Website</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/privacy.html">Privacy</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/changelog.html">Changelog</a> ·
@@ -69,8 +70,7 @@ come back.
 
 ## Install
 
-vatra is awaiting review on the Chrome Web Store; this section will carry the
-listing link once it's live.
+**[Get vatra on the Chrome Web Store](https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh)**
 
 ## Privacy
 

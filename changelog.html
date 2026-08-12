@@ -24,8 +24,13 @@
   <main class="changelog">
     <h1>Changelog</h1>
     <p>What changed in each build, newest first.</p>
-    <p>vatra hasn&#x27;t reached the Chrome Web Store yet — 0.4.0 is the build in review, and everything before it was a development build. Anything under <strong>Unreleased</strong> is written and tested but not yet in a submitted package.</p>
-    <h2>Unreleased</h2>
+    <p>vatra is <a href="https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh">on the Chrome Web Store</a> as of 0.4.0. Anything below a version heading has shipped; builds before 0.4.0 were development-only and never published.</p>
+    <h2>0.4.1 — August 2026</h2>
+    <h3>The panel&#x27;s own controls stay readable over the page</h3>
+    <p>The header holds the search box and every control, and at the default transparency it was letting a heading on the page behind read straight through them. The header is now held far more opaque than the list below it — the list is content, and seeing your page through it is the point of the setting, but the controls are not. &quot;Solid&quot; now means solid, and even at maximum transparency the header stops at a level where the controls stay legible.</p>
+    <h3>The strip&#x27;s view button matches the rest of the panel</h3>
+    <p>The little view button on the left strip was drawing itself in its own palette: red for Hot, blue for Domains, green for Closed. It now uses the same warm treatment as the matching chip in the header, so one state doesn&#x27;t look like two different things depending on where you look at it. The red was not even vatra&#x27;s ember — it was a hotter, more alarming orange that read like a warning.</p>
+    <p>The three strip buttons also had three different corner radii and inconsistent outlines, which made them look slightly out of line with each other in a column. They now match.</p>
     <h3>Search ranks by match quality, then heat</h3>
     <p>Search finds the thing; heat decides which found thing comes first. That was already true, but nothing stopped a very hot tab from outranking an exact match — a tab whose <em>URL</em> happened to contain your query could sit above the tab actually titled with it. Matches are now graded first (title start, then a word inside the title, then anywhere in the title, then the site, then the URL), and heat orders the tabs within each grade. An exact title match can no longer be buried.</p>
     <h3>Several words, in any order, and typos</h3>
