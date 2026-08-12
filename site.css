@@ -158,6 +158,12 @@ li::marker {
   color: var(--ring);
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0 1.5rem;
+}
+
 /* ── screenshots ──────────────────────────────────────────────────────── */
 figure {
   margin: 2rem 0;
