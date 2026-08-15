@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# The exit survey is noindex in its own head; repeated here so crawlers
+# that never fetch it still skip it.
+Disallow: /vatra-tab-manager/uninstall.html
+
+Sitemap: https://vyshni-labs.github.io/vatra-tab-manager/sitemap.xml
