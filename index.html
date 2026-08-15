@@ -125,6 +125,22 @@
         </ul>
 
         <figure>
+      <video
+        src="assets/demo.mp4"
+        poster="assets/shot1-panel.png"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        width="1280"
+        height="800"
+        aria-label="vatra opening over a page, listing tabs by attention, filtering as a query is typed, then grouping them by site"
+      ></video>
+      <figcaption>Summon, scan, search — about nine seconds.</figcaption>
+    </figure>
+
+    <figure>
       <img
         src="assets/shot1-panel.png"
         alt="The vatra panel open over a Wikipedia article, listing ten tabs ordered by attention"
@@ -177,5 +193,20 @@
         Vyshni labs
       </footer>
     </div>
+    <script>
+      // An autoplaying loop is more motion than the rest of this site puts
+      // together. Anyone who asked their OS to calm things down gets the poster
+      // frame and a control instead. CSS cannot pause a video, so this is JS.
+      (() => {
+        const v = document.querySelector("figure video");
+        if (!v) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          v.removeAttribute("autoplay");
+          v.removeAttribute("loop");
+          v.controls = true;
+          v.pause();
+        }
+      })();
+    </script>
   </body>
 </html>
