@@ -70,6 +70,8 @@ The pin cycles through three states, and its icon fills like a bottle to say
 which: empty — nothing pinned; half — the strip stays; full — the open panel
 stays.
 
+![The pinned strip's wave, the pinned ring, then the full panel](assets/demo.gif)
+
 With the strip pinned, hovering a tab shows a wave beside it: that tab's title
 large in the middle, its two neighbours on each side smaller. Click any of them
 to switch. The panel never opens out from under you.
