@@ -60,7 +60,26 @@ side bars — or Alt+arrow — to reorder.
 
 A thin strip rests at the edge of the page and expands on direct hover, or on
 the scrollbar beside it. **Alt+S** opens it anywhere with search already
-focused. Prefer Chrome's built-in sidebar? Switch in Settings → Panel type.
+focused. The strip scrolls when more tabs are open than fit, and follows the
+tab you're on. Prefer Chrome's built-in sidebar? Switch in Settings → Panel
+type.
+
+### Pin what you want to keep in view
+
+The pin cycles through three states, and its icon fills like a bottle to say
+which: empty — nothing pinned; half — the strip stays; full — the open panel
+stays.
+
+With the strip pinned, hovering a tab shows a wave beside it: that tab's title
+large in the middle, its two neighbours on each side smaller. Click any of them
+to switch. The panel never opens out from under you.
+
+![The pinned strip: hovering a tab shows it and its neighbours as a wave](assets/shot4-wave.png)
+
+Pinned tabs ring the first one — small at rest, opening into a half-circle
+when you hover, each with its title.
+
+![Pinned tabs opened into a ring beside the strip](assets/shot5-ring.png)
 
 ### Let cold tabs sleep
 
