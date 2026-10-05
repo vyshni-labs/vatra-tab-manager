@@ -64,11 +64,13 @@ focused. The strip scrolls when more tabs are open than fit, and follows the
 tab you're on. Prefer Chrome's built-in sidebar? Switch in Settings → Panel
 type.
 
-### Pin what you want to keep in view
+### Three ways to keep it in view
 
-The pin cycles through three states, and its icon fills like a bottle to say
-which: empty — nothing pinned; half — the strip stays; full — the open panel
-stays.
+One button at the top of the strip picks how vatra stays: **auto-hide** (the
+strip tucks away; hovering it opens the panel), **pinned strip** (the strip
+stays), or **pinned panel** (the open panel stays). Its icon is a picture of
+that layout. Click it for the next mode, or hover it for a menu of all three
+with the current one marked.
 
 ![The pinned strip's wave, the pinned ring, then the full panel](assets/demo.gif)
 
