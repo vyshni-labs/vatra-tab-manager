@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh"><strong>Install</strong></a> ·
+  <a href="https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh?utm_source=github&utm_medium=readme&utm_campaign=site-readme-nav"><strong>Install</strong></a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/">Website</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/privacy.html">Privacy</a> ·
   <a href="https://vyshni-labs.github.io/vatra-tab-manager/changelog.html">Changelog</a> ·
@@ -93,7 +93,7 @@ come back.
 
 ## Install
 
-**[Get vatra on the Chrome Web Store](https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh)**
+**[Get vatra on the Chrome Web Store](https://chromewebstore.google.com/detail/lcnmjfcejdglgmppnhhfmgkakjbeljdh?utm_source=github&utm_medium=readme&utm_campaign=site-readme-install)**
 
 ## Privacy
 
